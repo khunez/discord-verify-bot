@@ -2,14 +2,30 @@
   "version": 2,
   "builds": [
     {
+      "src": "**/*.html",
+      "use": "@vercel/static"
+    },
+    {
       "src": "app.js",
       "use": "@vercel/node"
     }
   ],
   "routes": [
     {
-      "src": "/(.*)",
-      "dest": "app.js"
+      "src": "/home(/index.html)?",
+      "dest": "/home/index.html"
+    },
+    {
+      "src": "/fivem(/index.html)?",
+      "dest": "/fivem/index.html"
+    },
+    {
+      "src": "/rules(/index.html)?",
+      "dest": "/rules/index.html"
+    },
+    {
+      "src": "/",
+      "dest": "/index.html"
     }
   ]
 }
